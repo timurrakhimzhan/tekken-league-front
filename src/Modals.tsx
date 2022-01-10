@@ -7,8 +7,6 @@ import React from "react";
 const Modals = () => {
 	const {isOpen: isProfileEditOpen} = useSnapshot(store.modals.profileEdit);
 	const {isOpen: isCreateChallengeOpen, challengedUsername} = useSnapshot(store.modals.createChallenge);
-	console.log(isProfileEditOpen, isCreateChallengeOpen)
-	console.log(store.user);
 	return <>
 			<CreateChallengeModal open={isCreateChallengeOpen}
 														onClose={() => store.modals.createChallenge.setIsOpen(false)}

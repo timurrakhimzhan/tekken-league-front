@@ -22,10 +22,8 @@ const AxiosWizard = () => {
 			if(!axiosError.isAxiosError) {
 				return
 			}
-			if(axiosError.response?.status === 401) {
-				store.user.removeCredentials();
-				delete axiosInstance.defaults.headers.authorization;
-			}
+			store.user.removeCredentials();
+			delete axiosInstance.defaults.headers.authorization;
 		}
 	}
 
