@@ -14,6 +14,15 @@ const LeaderboardTablePure: React.FC<LeaderboardTablePureProps> = ({items, onPla
 		</THead>
 		<Tbody>
 			{
+				items.length === 0 && (
+					<Tr>
+						<Td colSpan={3} align={"center"} fontFamily={'thin'}>
+							No players registered yet
+						</Td>
+					</Tr>
+				)
+			}
+			{
 				items.map(({rank, username, rating}) => (
 					<Tr className={'leaderboard-row'} key={rank}>
 						<Td>{rank}</Td>
