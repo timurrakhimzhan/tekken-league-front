@@ -17,7 +17,7 @@ const LeaderboardTablePure: React.FC<LeaderboardTablePureProps> = ({items, onPla
 				items.length === 0 && (
 					<Tr>
 						<Td colSpan={3} align={"center"} fontFamily={'thin'}>
-							No players registered yet
+							No players registered yett
 						</Td>
 					</Tr>
 				)
