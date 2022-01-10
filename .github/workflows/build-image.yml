@@ -13,7 +13,7 @@ jobs:
         with:
           image: timurrakhimzhan/tekken-league-front
           tags: v1, latest
-          registry: registry-url.io
+          registry: https://hub.docker.com
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
