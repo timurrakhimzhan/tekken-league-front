@@ -10,14 +10,14 @@ import {useHistory} from "react-router-dom";
 import useNavigationHandlers from "../../../hooks/use-navigation-handlers";
 
 const PlayerList = () => {
-	const {data, isFetching} = useSearchPlayers();
+	const {data, isLoading} = useSearchPlayers();
 	const {username} = useAuth();
 	const {handleProfileOpen} = useNavigationHandlers();
 	const [opponentToChallenge, setOpponentToChallenge] = useState<string | null>(null);
 
 	return <>
 		{
-			!data || isFetching ? <Spinner className={'marginLeftAuto marginRightAuto'} color={'primary'} size={'md'} />
+			!data || isLoading ? <Spinner className={'marginLeftAuto marginRightAuto'} color={'primary'} size={'md'} />
 				:
 				<PlayerListWrapperStyled>
 					{
