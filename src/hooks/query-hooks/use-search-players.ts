@@ -4,7 +4,9 @@ import {useQuery, UseQueryOptions} from "react-query";
 import {API_PLAYERS} from "../../constants";
 import API from "../../api";
 
-const queryParams: GetUsersReqParams = proxy({});
+const queryParams: GetUsersReqParams = proxy({
+	perPage: 100
+});
 
 export const useSearchPlayers = (config?: UseQueryOptions<GetUsersRes>) => {
 	const {username, character} = useSnapshot(queryParams);
