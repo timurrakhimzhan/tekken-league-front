@@ -7,7 +7,7 @@ import Tabs from "../../../../shared/TabsWithContent/Tabs";
 import Flex from "../../../../shared/Flex";
 import TabsContent from "../../../../shared/TabsWithContent/TabsContent";
 import React from "react";
-import {TabsContentWrapperStyled} from "./styled";
+import {ChallengeTabsContainerStyled, TabsContentWrapperStyled} from "./styled";
 
 const ChallengeTabs = () => {
 	const items = [{
@@ -18,14 +18,14 @@ const ChallengeTabs = () => {
 		Component: () => <CreateChallengeForm onSuccess={() => store.toaster.createMessage("Challenge successfully created", "success")} />
 
 	}]
-	return <Container direction={'column'} className={'flex1'}>
+	return <ChallengeTabsContainerStyled>
 		<TabsWithContent items={items}>
 			<Tabs />
 			<TabsContentWrapperStyled className={'marginLeftAuto marginRightAuto'}>
 				<TabsContent />
 			</TabsContentWrapperStyled>
 		</TabsWithContent>
-	</Container>
+	</ChallengeTabsContainerStyled>
 }
 
 export default ChallengeTabs;

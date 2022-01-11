@@ -7,7 +7,7 @@ import PlayerList from "../SearchPlayer/PlayerList";
 import React, {useEffect, useState} from "react";
 import Container from "../../shared/Container";
 import {TabsWithContent} from "../../shared/TabsWithContent/TabsWithContent";
-import { TabsContentWrapperStyled } from "./styled";
+import {ProfileSearchTabsContainerStyled, TabsContentWrapperStyled} from "./styled";
 import Tabs from "../../shared/TabsWithContent/Tabs";
 import TabsContent from "../../shared/TabsWithContent/TabsContent";
 import Flex from "../../shared/Flex";
@@ -31,14 +31,14 @@ const ProfileSearchTabs: React.FC<ProfileSearchTabsProps> = (props) => {
 		setTabIndex(0);
 	}, [location]);
 
-	return <Container direction={'column'} className={'flex1 height100'} {...props}>
+	return <ProfileSearchTabsContainerStyled {...props}>
 		<TabsWithContent tabIndex={tabIndex} setTabIndex={setTabIndex} items={items}>
 			<Tabs />
 			<TabsContentWrapperStyled className={'marginLeftAuto marginRightAuto'}>
 				<TabsContent />
 			</TabsContentWrapperStyled>
 		</TabsWithContent>
-	</Container>
+	</ProfileSearchTabsContainerStyled>
 }
 
 export default ProfileSearchTabs;

@@ -50,7 +50,7 @@ const MatchHistoryTablePure: React.FC<MatchHistoryTablePureProps> = ({items, onP
                         {
                             !columnsToHide.includes(MATCH_HISTORY_HIDE_COLUMNS.SCORE) && (
                               <Td>
-                                  {match.p1.score || "?"} - {match.p2.score || "?"}
+                                  {match.p1.score ?? "?"} - {match.p2.score ?? "?"}
                               </Td>
                             )
                         }

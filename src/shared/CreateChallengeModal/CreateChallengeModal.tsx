@@ -10,7 +10,7 @@ import store from "../../store";
 const CreateChallengeModal: React.FC<CreateChallengeModalProps> = ({open, onClose, opponent}) => {
 	const handleOnSuccess = () => {
 		onClose();
-		store.toaster.createMessage("Challenge successfully created", "success");
+		store.toaster.createMessage("Challenge was successfully created", "success");
 	}
 	return <AuthProtected>
 		<Modal className={'paddingLeft0 paddingRight0 paddingTopXLg paddingBottomXLg'} onClose={onClose} open={open}>

@@ -9,7 +9,8 @@ export const ProfileContainerStyled = styled(Container, {
     height: '100%',
     '@media only screen and (min-width: 750px)': {
         maxWidth: '300px',
-    }
+    },
+    overflowY: 'auto',
 })
 export const LogoutStyled = styled(Flex, {
     color: '$secondary',

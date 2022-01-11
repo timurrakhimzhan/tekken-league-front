@@ -15,17 +15,8 @@ import {
 	FaTable,
 	GiAncientSword,
 	GiAxeSword,
-	GiChampions, GiCryoChamber, GiGoblinCamp,
-	GiPodiumWinner,
-	GiShiningSword,
-	GiSwordsPower,
-	GrScorecard,
-	GrStatusInfo,
+	GiCryoChamber,
 	IoPerson,
-	MdPermIdentity,
-	RiGobletFill,
-	RiGobletLine,
-	SiStatuspage
 } from "react-icons/all";
 import Flex from "../../../../shared/Flex";
 
@@ -109,7 +100,7 @@ const MatchInfoDetailsTablePure: React.FC<MatchInfoDetailsTablePureProps> = ({ma
 				</Td>
 			</Tr>
 			{
-				isFinished && match.p1.score && match.p2.score && (
+				isFinished && match.p1.score !== null && match.p2.score !== null && (
 					<>
 						<Tr>
 							<Td>
