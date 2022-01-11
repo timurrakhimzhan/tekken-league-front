@@ -64,7 +64,7 @@ const MatchHistoryTablePure: React.FC<MatchHistoryTablePureProps> = ({items, onP
                               <Td>
                                   {match.category ? <Typography weight={'bold'} color={match.category === "WIN" ? 'success' : 'error'}>
                                       {match.category}
-                                  </Typography> : "?"}
+                                  </Typography> : "No result"}
                               </Td>
                             )
                         }
