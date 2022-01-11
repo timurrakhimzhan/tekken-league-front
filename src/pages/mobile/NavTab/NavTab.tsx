@@ -3,61 +3,16 @@ import Flex from "../../../shared/Flex";
 import {styled} from "../../../themes";
 import {
 	AiOutlineHome,
-	AiOutlineMail,
-	BsSearch,
-	FaFistRaised,
-	GiFist, GiGrenade, GrThreats,
-	HiOutlineMenu,
 	IoPersonOutline
 } from "react-icons/all";
 import {GiBroadsword} from "react-icons/gi";
-import {RiSwordFill} from "react-icons/ri";
 import ChallengeIcon from "../../../shared/ChallengeIcon";
 import useNavigationHandlers from "../../../hooks/use-navigation-handlers";
 import useAuth from "../../../hooks/use-auth";
 import AuthProtected from "../../../shared/AuthProtected";
 import UnAuthProtected from "../../../shared/UnAuthProtected";
 import {useLocation} from "react-router-dom";
-
-const NavTabWrapperStyled = styled(Flex, {
-	width: '100%',
-	height: '$headerHeight',
-	borderTop: '1px solid white',
-	boxSizing: 'border-box',
-	justifyContent: 'space-evenly',
-	padding: '$md'
-});
-
-const NavItemWrapperStyled = styled(Flex, {
-	padding: '$md',
-	alignItems: 'center',
-	justifyContent: 'center',
-	"& svg": {
-		display: 'block',
-		width: '16px',
-		height: '16px',
-	},
-	"& path": {
-		fill: "$textSecondary",
-	},
-	color: '$textSecondary',
-	variants: {
-		active: {
-			true: {
-				"& path": {
-					fill: "$secondary",
-				},
-				color: '$secondary'
-			}
-		}
-	}
-})
-
-const VerticalDividerStyled = styled('div', {
-	height: '100%',
-	width: '1px',
-	background: '$divider'
-});
+import { NavItemWrapperStyled, NavTabWrapperStyled, VerticalDividerStyled } from "./styled";
 
 const NavTab = () => {
 	const {handleHomePageOpen, handleProfileOpen, handleChallengesOpen, handleMatchesOpen, handleAuthOpen} = useNavigationHandlers();
@@ -75,7 +30,7 @@ const NavTab = () => {
 		</UnAuthProtected>
 		<AuthProtected>
 			<VerticalDividerStyled />
-			<NavItemWrapperStyled onClick={() => handleProfileOpen(username!)} active={location.pathname.includes('/profile')}>
+			<NavItemWrapperStyled onClick={() => handleProfileOpen(username!)} active={location.pathname === `/profile/${username}`}>
 				<IoPersonOutline />
 			</NavItemWrapperStyled>
 		</AuthProtected>
