@@ -17,7 +17,7 @@ const MatchHistoryTablePure: React.FC<MatchHistoryTablePureProps> = ({items, onP
                 <Th>Player #1</Th>
                 {!columnsToHide.includes(MATCH_HISTORY_HIDE_COLUMNS.SCORE) && <Th>Score</Th>}
                 <Th>Player #2</Th>
-                {!columnsToHide.includes(MATCH_HISTORY_HIDE_COLUMNS.CATEGORY) && <Th>Category</Th>}
+                {!columnsToHide.includes(MATCH_HISTORY_HIDE_COLUMNS.CATEGORY) && <Th>Result</Th>}
                 {!columnsToHide.includes(MATCH_HISTORY_HIDE_COLUMNS.FIRST_TO) && <Th>First To (FT)</Th>}
                 <Th>Status</Th>
                 {!columnsToHide.includes(MATCH_HISTORY_HIDE_COLUMNS.DELTA) && <Th>Delta</Th>}
