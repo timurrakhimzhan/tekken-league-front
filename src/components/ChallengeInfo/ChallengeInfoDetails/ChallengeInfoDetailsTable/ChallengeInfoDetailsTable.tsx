@@ -14,8 +14,8 @@ const ChallengeInfoDetailsTable = () => {
 	const {id} = useParams<{id: string}>();
 	const {username} = useAuth();
 	const {handleMatchOpen, handleProfileOpen} = useNavigationHandlers();
-	const {isFetching, data} = useQuery([API_GET_CHALLENGE, id], () => API.challenge.actions.getChallenge(parseInt(id)));
-	if(!data || isFetching || !username) {
+	const {isLoading, data} = useQuery([API_GET_CHALLENGE, id], () => API.challenge.actions.getChallenge(parseInt(id)));
+	if(!data || isLoading || !username) {
 		return <Spinner className={'marginRightAuto marginLeftAuto'} color={'primary'} size={'md'} />
 	}
 	return <ChallengeInfoDetailsTablePure challengeInfo={data} username={username}
