@@ -10,7 +10,7 @@ const CreateChallenge: React.FC<CreateChallengeProps> = (props) => {
 	const {isMobile} = useDeviceInfo();
 	return <CreateChallengeContainerStyled direction={'column'} {...props} mobile={isMobile}>
 			<Typography className={'marginBottomLg marginLeftAuto marginRightAuto'}  color={'primary'} size={'xLg'} weight={'bold'}>
-				Challenge someone
+				Challenge request
 			</Typography>
 		<CreateChallengeForm onSuccess={() => store.toaster.createMessage("Challenge successfully created", "success")} />
 	</CreateChallengeContainerStyled>

@@ -57,7 +57,7 @@ const CreateChallengeForm: React.FC<CreateChallengeFormProps> = ({opponent, onSu
 	return <Form<CreateChallengeForm> onSubmit={handleSubmit(handleSubmitForm)} useFormResult={useFormResult}>
 		<UserSelect label={"Opponent:"} name={"opponent"} placeholder={"Select your opponent"} />
 		<Input label={"First to:"} type={"number"} name={"firstTo"} placeholder={"3"} />
-		<TextArea rows={4} label={"Comment"} name={"comment"} placeholder={"Leave a comment to your challenge"} />
+		<TextArea rows={4} label={"Comment"} name={"comment"} placeholder={"Leave a comment to your request"} />
 		<Button isLoading={isLoading} type={'submit'}>Challenge</Button>
 	</Form>
 }

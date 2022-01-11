@@ -15,6 +15,7 @@ export const PlayerListWrapperStyled = styled('div', {
     flexDirection: 'column',
     width: '100%',
     overflowY: 'auto',
+    overflowX: 'hidden'
 });
 
 export const PlayerCardWrapperStyled = styled('div', {

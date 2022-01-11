@@ -5,6 +5,7 @@ export const ChallengeInfoContainerStyled = styled(Container, {
 	flex: 1,
 	maxWidth: '450px',
 	position: 'relative',
+	overflowY: 'auto'
 });
 
 export const BackIconWrapperStyled = styled('div', {

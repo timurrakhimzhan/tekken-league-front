@@ -4,7 +4,8 @@ import Container from "../../shared/Container";
 export const MatchInfoContainerStyled = styled(Container, {
 	flex: 1,
 	maxWidth: '500px',
-	position: 'relative'
+	position: 'relative',
+	overflowY: 'auto',
 });
 
 

@@ -53,7 +53,7 @@ const DeclineMatchForm: React.FC<DeclineMatchFormProps> = ({p1Username, p2Userna
 	return <DeclineMatchFormStyledWrapper>
 		<Form<DeclineMatchForm> useFormResult={useFormResult} onSubmit={handleSubmit(handleSubmitForm)}>
 			<TextArea label={'Leave a comment:'}
-								placeholder={'Let the opponent know the reason of your answer'}
+								placeholder={'Let the opponent know the reason of your decline'}
 								value={comment}
 								onChange={(event: ChangeEvent<HTMLTextAreaElement>) => setComment(event.target.value)}
 								name={'comment'} className={'marginBottomMd'} />

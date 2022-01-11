@@ -63,7 +63,7 @@ const AnswerChallengeForm = () => {
 
 	return <AnswerChallengeFormWrapperStyled>
 		<TextArea label={'Leave a comment:'}
-							placeholder={'Let the opponent know the reason of your answer'}
+							placeholder={'Let the opponent know the reason for your answer'}
 							value={formState.comment}
 							onChange={(event: ChangeEvent<HTMLTextAreaElement>) => setFormState((prev) => ({...prev, comment: event.target.value}))}
 							name={'comment'} className={'marginBottomMd'} rows={4} />
