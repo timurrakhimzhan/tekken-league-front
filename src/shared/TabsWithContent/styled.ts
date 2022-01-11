@@ -7,6 +7,7 @@ export const WrapperStyled = styled('div', {
     fontSize: '$md',
     maxHeight: '100%',
     flex: 1,
+    overflowY: 'hidden',
     '>:last-child': {
         marginTop: 'calc($md)'
     }

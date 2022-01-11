@@ -3,6 +3,8 @@ import Container from "../../shared/Container";
 
 export const TabsContentWrapperStyled = styled('div', {
     padding: '$lg',
+    maxHeight: '100%',
+    overflowY: 'auto'
 });
 
 export const AuthContainerStyled = styled(Container, {
