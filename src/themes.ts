@@ -19,6 +19,7 @@ export const {styled, theme, css, global} = createCss({
         colors: {
             backgroundPrimary: 'hsl(200, 7.0%, 8.8%)',
             backgroundSecondary: 'hsl(0, 0%, 19%)',
+            inputBackground: 'hsl(0, 0%, 15%)',
             primary: 'hsl(196, 98.8%, 66.5%)',
             secondary: 'hsl(59,99.2%,49%)',
             // secondary: 'hsl(34, 100%, 63%)',

@@ -28,12 +28,14 @@ export const InputStyled = styled('input', {
     height: '$inputHeight',
     outline: 'none',
     boxSizing: 'border-box',
-    border: '2px solid white',
+    border: '2px solid $backgroundPrimary',
     padding: '1px calc($md - 2px)',
     fontFamily: '$regular',
     '&:focus': {
-        borderColor: '$secondary'
+        borderColor: '$secondary',
     },
+    background: '$inputBackground',
+    color: '$textSecondary',
     variants: {
         isErrored: {
             true: {
@@ -56,12 +58,14 @@ export const TextAreaStyled = styled('textarea', {
     fontSize: '$md',
     outline: 'none',
     boxSizing: 'border-box',
-    border: '2px solid white',
+    border: '2px solid $backgroundPrimary',
     padding: '$sm $md',
     resize: 'vertical',
     '&:focus': {
         borderColor: '$secondary'
     },
+    background: '$inputBackground',
+    color: '$textSecondary',
     variants: {
         isErrored: {
             true: {

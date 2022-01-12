@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import FormContext from "./FormContext";
 import {InputLabelStyled, InputStyled, } from "./styled";
 import {SelectProps} from "./Select.props";
-import ReactSelect, {StylesConfig, ValueType} from "react-select";
+import ReactSelect, {IndicatorContainerProps, StylesConfig, ValueType} from "react-select";
 import {theme} from "../../themes";
 import {Controller} from 'react-hook-form'
 import {ThemeConfig} from "react-select/src/theme";
@@ -15,13 +15,56 @@ const Select: React.FC<SelectProps> = ({name, label, className, ...rest}) => {
     const {formState, control} = context;
     const isErrored = Boolean(formState.errors[name]);
     const stylesConfig: StylesConfig<any, any> = {
-        menuList: (provided) => ({
-            ...provided,
-            fontSize: theme.fontSizes.md.value,
-            color: theme.colors.backgroundSecondary.value,
-        }),
+        menuList: (provided, state) => {
+            let color = theme.colors.textSecondary.value;
+            return {
+                ...provided,
+                fontSize: theme.fontSizes.md.value,
+                color,
+                '& :hover': {
+                    color: '$backgroundPrimary'
+                }
+            }
+        },
+        singleValue(base){
+            return {
+                ...base,
+                color: theme.colors.textSecondary.value
+            }
+        },
+        dropdownIndicator(base, state) {
+            let color = theme.colors.divider.value
+            if(state.isFocused) {
+                color = theme.colors.secondary.value
+            }
+            return {
+                ...base,
+                color,
+            }
+        },
+        indicatorSeparator(provided, state){
+            let background = theme.colors.divider.value;
+
+            if(state.isFocused) {
+                background = theme.colors.secondary.value
+            }
+            return {
+                ...provided,
+                background
+            }
+        },
+        option(base, props) {
+            let color = base.color;
+            if(props.isFocused) {
+                color = theme.colors.backgroundPrimary.value;
+            }
+            return {
+                ...base,
+                color
+            }
+        },
         control: (provided, state) => {
-            let borderColor = '';
+            let borderColor = theme.colors.backgroundPrimary.value;
             if(state.isFocused) {
                 borderColor = theme.colors.secondary.value
             }
@@ -43,6 +86,16 @@ const Select: React.FC<SelectProps> = ({name, label, className, ...rest}) => {
                 }
             }
         },
+        clearIndicator(base, state) {
+            let color = theme.colors.divider.value
+            if(state.isFocused) {
+                color = theme.colors.secondary.value
+            }
+            return {
+                ...base,
+                color,
+            }
+        },
         valueContainer: (provided, state) => ({
             ...provided,
             fontSize: theme.fontSizes.md.value,
@@ -52,10 +105,12 @@ const Select: React.FC<SelectProps> = ({name, label, className, ...rest}) => {
         ...themeSelect,
         colors: {
             ...themeSelect.colors,
-            primary: theme.colors.primary.value,
-            primary25: theme.colors.secondary.value,
+            primary: theme.colors.secondary.value,
+            primary25: theme.colors.primary.value,
+            primary50: theme.colors.primary.value,
             primary75: theme.colors.primary.value,
             danger: theme.colors.error.value,
+            neutral0: theme.colors.inputBackground.value,
             neutral50: theme.colors.textSecondary.value
         }
     })
